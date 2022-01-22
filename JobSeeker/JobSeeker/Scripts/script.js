@@ -46,8 +46,7 @@ else if (document.URL.includes("User/SignUp")) {
     history.back();
   });
 }
-    /*
-else if (document.URL.includes("explore.php")) {
+else if (document.URL.includes("Explore/Jobs")) {
   const catagoryIconTriangle = document.querySelector(".catagory-div .icon-triangle");
   const catagoryItems = document.querySelector(".explore-container .left .choose-catagory");
   const budgetIconTriangle = document.querySelector(".budget-div .icon-triangle");
@@ -209,7 +208,7 @@ else if (document.URL.includes("explore.php")) {
       isToggleCatagory = false;
     }
   })
-} else if (document.URL.includes("profile.php")) {
+} else if (document.URL.includes("/Profile/Edit")) {
   const changePictureBtn = document.querySelector('.change-picture-btn');
   const avaterImage = document.querySelector('.avatar-img');
   const chooseImage = document.querySelector('.choose-image');
@@ -232,4 +231,4 @@ else if (document.URL.includes("explore.php")) {
       reader.readAsDataURL(file);
     }
   });
-}*/
+}
