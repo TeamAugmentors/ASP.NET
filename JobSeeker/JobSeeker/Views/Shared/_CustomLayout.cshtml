@@ -1,14 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@{
+    string host = HttpContext.Current.Request.Url.ToString();
+}
+<!DOCTYPE html>
 <html>
 <head>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>JobSeeker</title>
-
-
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -28,7 +27,27 @@
 
     <!-- custom stylesheet  -->
     <link rel="stylesheet" href="~/Content/styles.css">
-
+    @{
+        if (host.Contains("Team/Member"))
+        {
+            <link rel="stylesheet" href="~/Content/fullpage.min.css">
+            <title>Team Page</title>
+        }
+        else if (host.Contains("User/SignIn"))
+        {
+            <title>Sign-in</title>
+        }
+        else if (host.Contains("User/SignUp"))
+        {
+            <title>Sign-up</title>
+        }
+        else if (host.Contains("Home/Index") || host.Contains("localhost"))
+        {
+            <link rel="stylesheet" href="~/Content/Card.css">
+            <link rel="stylesheet" href="~/Content/home_style.css">
+            <title>JobSeeker</title>
+        }
+    }
 </head>
 <body>
     <style>
@@ -62,14 +81,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="team.php">Meet the Team</a>
+                        <a class="nav-link" href="/Team/Member">Meet the Team</a>
                     </li>
                     <div class="horizontal-border nav-item"></div>
                     <li class="nav-item sign-in">
-                        <a class="nav-link custom-link" href="signin.php"><i class="fas fa-lock"></i>Sign in</a>
+                        <a class="nav-link custom-link" href="/User/SignIn"><i class="fas fa-lock"></i>Sign in</a>
                     </li>
                     <li class="nav-item sign-up">
-                        <a class="nav-link custom-link sign-up" href="signup.php">Sign up<i class="fas fa-user"></i></a>
+                        <a class="nav-link custom-link sign-up" href="/User/SignUp">Sign up<i class="fas fa-user"></i></a>
                     </li>
             </div>
         </div>
@@ -77,26 +96,49 @@
 
     @RenderBody()
 
-    <footer class="bg-black overflow-hidden" style="height: 200px;">
-        <div class="row d-flex flex-column align-items-center ">
-            <hr class="color-white my-5 w-90 ">
-            <div class="d-flex justify-content-between  w-90">
-                <div class="d-flex align-items-center">
-                    <a href="#" class="navbar-brand color-white " style="text-decoration: none;">JS</a>
-                    <h4 class="color-white footer-text">© 2021 Company, Inc</h4>
-                </div>
-                <div>
-                    <h1 class="header-text-2">
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-facebook-messenger"></i>
-                        <i class="fab fa-twitter"></i>
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @{
+        if (host.Contains("/Team/Member"))
+        {
+            <script src="~/Scripts/fullpage.min.js"></script>
 
- 
+            <script type="text/javascript" src="~/Scripts/vanilla-tilt.js"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        }
+        else if (host.Contains("User/SignIn"))
+        {
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+            /*
+            <script type="text/javascript">
+                            <? php
+                            if ($success == 0 && !$isBanned) {
+                        echo "var toastLiveExample = document.getElementById('liveToastError');
+                        var toast = new bootstrap.Toast(toastLiveExample);
+                        toast.show(); ";
+                    } else if ($isBanned) {
+                        echo "var toastLiveExample = document.getElementById('liveToastBan');
+                        var toast = new bootstrap.Toast(toastLiveExample);
+                        toast.show(); ";
+                    }
+                            ?>
+            </script>*/
+        }
+        else if (host.Contains("User/SignUp"))
+        {
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+            /*<script type="text/javascript">
+                        <? php
+                        if ($isChecked === 0) {
+                        echo " var toastTrigger = document.getElementById('liveToastBtn');
+                        var toastLiveExample = document.getElementById('liveToast');
+                        var toast = new bootstrap.Toast(toastLiveExample);
+                        toast.show(); ";
+                    }
+                        ?>
+            </script>*/
+        }
+    }
     <script type="text/javascript" src="~/Scripts/script.js"></script>
 </body>
 </html>

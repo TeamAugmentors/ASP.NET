@@ -1,14 +1,12 @@
 function map(x, in_min, in_max, out_min, out_max) {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
-if (document.URL.includes("team.php")) {
+if (document.URL.includes("/Team/Member")) {
   // =================================================
   // team page Animation
   // =================================================
 
   // vanilla-tilt 
-
-  console.log("hello");
   VanillaTilt.init(document.querySelectorAll(".default-card"), {
     max: 25,
     speed: 400,
@@ -32,20 +30,23 @@ if (document.URL.includes("team.php")) {
   }
   typeWriter();
 }
-else if (document.URL.includes("signin.php")) {
+
+else if (document.URL.includes("User/SignIn")) {
   // =====================Sign inpage back button===============================
   const signInBackButton = document.querySelector(".signin-page .arrow-left");
   signInBackButton.addEventListener('click', () => {
     history.back();
   });
 }
-else if (document.URL.includes("signup.php")) {
+
+else if (document.URL.includes("User/SignUp")) {
   // =====================Sign inSign up page back button===============================
   const signInBackButton = document.querySelector(".signup-page .arrow-left");
   signInBackButton.addEventListener('click', () => {
     history.back();
   });
 }
+    /*
 else if (document.URL.includes("explore.php")) {
   const catagoryIconTriangle = document.querySelector(".catagory-div .icon-triangle");
   const catagoryItems = document.querySelector(".explore-container .left .choose-catagory");
@@ -231,4 +232,4 @@ else if (document.URL.includes("explore.php")) {
       reader.readAsDataURL(file);
     }
   });
-}
+}*/
