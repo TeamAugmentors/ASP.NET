@@ -1,8 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\JobSeeker"
+    "\\JobSeeker",
+    "\\JobSeeker\\JobSeeker",
+    "\\JobSeeker\\JobSeeker\\Views",
+    "\\JobSeeker\\JobSeeker\\Views\\Explore",
+    "\\JobSeeker\\JobSeeker\\Views\\Home",
+    "\\JobSeeker\\JobSeeker\\Views\\Profile",
+    "\\JobSeeker\\JobSeeker\\Views\\Shared",
+    "\\JobSeeker\\JobSeeker\\Views\\User"
   ],
-  "SelectedNode": "\\JobSeeker\\JobSeeker.sln",
+  "SelectedNode": "\\JobSeeker\\JobSeeker\\Views\\User\\SignIn.cshtml",
   "PreviewInSolutionExplorer": false
 }

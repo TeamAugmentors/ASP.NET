@@ -90,7 +90,7 @@
                     <div class="overview-content">
                         <div>
                             <div class="overview-content__bg">
-                                <input type="checkbox" name="status-accordion" id="active-orders" class="accordion__input" "checked"
+                                <input type="checkbox" name="status-accordion" id="active-orders" class="accordion__input" "checked"/>
                                 <div class="overview-label flex">
                                     <label for="active-orders" class="accordion__label flex">Active Orders</label>
                                     <i class='bx bxs-right-arrow'></i>
@@ -99,18 +99,17 @@
                                     <!-- nested accordion -->
                                     <div>
                                         <div class="overview-nested-content__bg">
-                                            <input type="checkbox" name="status-nested-accordion" id="order<?php echo $temp[" serial"] ?>" class="accordion__input">
+                                            <input type="checkbox" name="status-nested-accordion" id="order1" class="accordion__input">
                                             <div class="overview-label flex">
-                                                <label for="order<?php echo $temp[" serial"] ?>" class="accordion__label flex"><?php echo $temp["name"] ?></label>
+                                                <label for="order1" class="accordion__label flex">lorem ipsum name</label>
                                                 <i class='bx bxs-right-arrow'></i>
                                             </div>
                                             <div class="accordion-content">
-                                                <?php echo $temp["details"] ?>
+                                                lorem ipsum details
                                             </div>
                                         </div>
                                     </div>
 
-                                    <?php } ?>
 
                                 </div>
                             </div>
@@ -124,23 +123,20 @@
                                 </div>
                                 <div class="accordion-content">
                                     <!-- nested accordion -->
-                                    <?php
-                                    foreach ($applied as $temp) {
-                                    ?>
+                                    
                                     <div>
                                         <div class="overview-nested-content__bg">
-                                            <input type="checkbox" name="status-nested-accordion" id="applied<?php echo $temp[" serial"] ?>" class="accordion__input">
+                                            <input type="checkbox" name="status-nested-accordion" id="applied1" class="accordion__input">
                                             <div class="overview-label flex">
-                                                <label for="applied<?php echo $temp[" serial"] ?>" class="accordion__label flex"><?php echo $temp["name"] ?></label>
+                                                <label for="applied1" class="accordion__label flex">lorem ipsum name</label>
                                                 <i class='bx bxs-right-arrow'></i>
                                             </div>
                                             <div class="accordion-content">
-                                                <?php echo $temp["details"] ?>
+                                                lorem ipsum details
                                             </div>
                                         </div>
                                     </div>
 
-                                    <?php } ?>
 
                                 </div>
                             </div>
@@ -181,9 +177,9 @@
                                                 <i class='bx bxs-right-arrow'></i>
                                             </div>
                                             <div class="accordion-content">
-                                                <h4><?php echo $name ?></h4>
-                                                <h4><?php echo $email ?></h4>
-                                                <h4><?php echo $phoneNo ?></h4>
+                                                <h4>lorem name</h4>
+                                                <h4>lorem email</h4>
+                                                <h4>lorem phone no</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -198,7 +194,7 @@
                                                 <i class='bx bxs-right-arrow'></i>
                                             </div>
                                             <div class="accordion-content">
-                                                <h4><?php echo $billing ?></h4>
+                                                <h4>lorem billing</h4>
                                             </div>
                                         </div>
                                     </div>
