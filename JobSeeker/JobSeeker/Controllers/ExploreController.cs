@@ -13,5 +13,9 @@ namespace JobSeeker.Controllers
         {
             return View();
         }
+        public ActionResult JobDetails()
+        {
+            return View();
+        }
     }
 }
